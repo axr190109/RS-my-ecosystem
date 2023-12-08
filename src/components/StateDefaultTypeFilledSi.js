@@ -3,29 +3,29 @@ import { useMemo } from "react";
 const StateDefaultTypeFilledSi = ({
   iconImageUrl,
   label = "Button",
-  imageSizeUrl,
+  imageSize,
   hasIconRight = true,
   hasIconLeft = true,
   stateDefaultTypeFilledSiBoxSizing,
   stateDefaultTypeFilledSiCursor,
   stateDefaultTypeFilledSiBorder,
   stateDefaultTypeFilledSiAlignSelf,
-  stateDefaultTypeFilledSiPosition,
-  stateDefaultTypeFilledSiTop,
-  stateDefaultTypeFilledSiLeft,
-  stateDefaultTypeFilledSiWidth,
   stateDefaultTypeFilledSiBackgroundColor,
   stateDefaultTypeFilledSiBoxShadow,
   stateDefaultTypeFilledSiZIndex,
+  stateDefaultTypeFilledSiMarginTop,
+  stateDefaultTypeFilledSiWidth,
   arrowIconWidth,
   arrowIconHeight,
   labelBoxSizing,
+  labelCursor,
   labelLineHeight,
   labelDisplay,
   labelColor,
   arrowIconWidth1,
   arrowIconHeight1,
   onButtonDefaultClick,
+  onLabelContainerClick,
 }) => {
   const stateDefaultTypeFilledSiStyle = useMemo(() => {
     return {
@@ -33,26 +33,22 @@ const StateDefaultTypeFilledSi = ({
       cursor: stateDefaultTypeFilledSiCursor,
       border: stateDefaultTypeFilledSiBorder,
       alignSelf: stateDefaultTypeFilledSiAlignSelf,
-      position: stateDefaultTypeFilledSiPosition,
-      top: stateDefaultTypeFilledSiTop,
-      left: stateDefaultTypeFilledSiLeft,
-      width: stateDefaultTypeFilledSiWidth,
       backgroundColor: stateDefaultTypeFilledSiBackgroundColor,
       boxShadow: stateDefaultTypeFilledSiBoxShadow,
       zIndex: stateDefaultTypeFilledSiZIndex,
+      marginTop: stateDefaultTypeFilledSiMarginTop,
+      width: stateDefaultTypeFilledSiWidth,
     };
   }, [
     stateDefaultTypeFilledSiBoxSizing,
     stateDefaultTypeFilledSiCursor,
     stateDefaultTypeFilledSiBorder,
     stateDefaultTypeFilledSiAlignSelf,
-    stateDefaultTypeFilledSiPosition,
-    stateDefaultTypeFilledSiTop,
-    stateDefaultTypeFilledSiLeft,
-    stateDefaultTypeFilledSiWidth,
     stateDefaultTypeFilledSiBackgroundColor,
     stateDefaultTypeFilledSiBoxShadow,
     stateDefaultTypeFilledSiZIndex,
+    stateDefaultTypeFilledSiMarginTop,
+    stateDefaultTypeFilledSiWidth,
   ]);
 
   const arrowIconStyle = useMemo(() => {
@@ -65,8 +61,9 @@ const StateDefaultTypeFilledSi = ({
   const labelStyle = useMemo(() => {
     return {
       boxSizing: labelBoxSizing,
+      cursor: labelCursor,
     };
-  }, [labelBoxSizing]);
+  }, [labelBoxSizing, labelCursor]);
 
   const label1Style = useMemo(() => {
     return {
@@ -85,7 +82,7 @@ const StateDefaultTypeFilledSi = ({
 
   return (
     <div
-      className="rounded bg-blue-denim overflow-hidden flex flex-row items-center justify-center py-2 px-3 text-center text-base text-grayscale-white font-desktop-caption-bold-link"
+      className="rounded bg-blue-denim overflow-hidden flex flex-row items-center justify-center py-2 px-3 text-center text-base text-grayscale-white font-desktop-body"
       style={stateDefaultTypeFilledSiStyle}
       onClick={onButtonDefaultClick}
     >
@@ -100,6 +97,7 @@ const StateDefaultTypeFilledSi = ({
       <div
         className="flex flex-row items-start justify-start py-0 px-2"
         style={labelStyle}
+        onClick={onLabelContainerClick}
       >
         <b className="relative leading-[24px]" style={label1Style}>
           {label}
@@ -109,7 +107,7 @@ const StateDefaultTypeFilledSi = ({
         <img
           className="relative w-6 h-6 overflow-hidden shrink-0"
           alt=""
-          src={imageSizeUrl}
+          src={imageSize}
           style={arrowIcon1Style}
         />
       )}

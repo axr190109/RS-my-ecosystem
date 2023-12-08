@@ -4,34 +4,41 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "grayscale-white": "#fff",
-        "grayscale-stone": "#192131",
         "grayscale-haiti": "#050515",
+        "grayscale-stone": "#192131",
+        "grayscale-white": "#fff",
+        "blue-curious-blue": "#2f8ae1",
+        "grayscale-iron": "#d9dbdd",
         "grayscale-shuttle-gray": "#64717f",
         "blue-denim": "#0f5ec2",
-        "grayscale-iron": "#d9dbdd",
+        black: "#000",
         "grayscale-sand": "#f4f5f7",
       },
       spacing: {},
-      
-      screens: {
-        sm: '480px',
-        md: '768px',
-        lg: '976px',
-        xl: '1440px',
-      },
       fontFamily: {
-        "desktop-caption-bold-link": "Karla",
+        "desktop-body": "Karla",
         "desktop-heading-1-bold": "Montserrat",
+      },
+      borderRadius: {
+        "999980xl": "999999px",
+        "99980xl": "99999px",
       },
     },
     fontSize: {
       xs: "12px",
       base: "16px",
+      xl: "20px",
       sm: "14px",
       "13xl": "32px",
-      xl: "20px",
       inherit: "inherit",
+    },
+    screens: {
+      lg: {
+        max: "1200px",
+      },
+      md: {
+        max: "960px",
+      },
     },
   },
   corePlugins: {

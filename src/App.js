@@ -5,10 +5,11 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Splash from "./pages/Splash";
-import Signin from "./pages/Signin";
-import Signup2 from "./pages/Signup2";
+import Landing from "./pages/Landing";
+import MyEcosystem from "./pages/MyEcosystem";
 import Signup1 from "./pages/Signup1";
+import Signup2 from "./pages/Signup2";
+import SignIn from "./pages/SignIn";
 
 function App() {
   const action = useNavigationType();
@@ -30,15 +31,19 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/00-signin":
+      case "/01-my-ecosystem":
         title = "";
         metaDescription = "";
         break;
-      case "/00-signup-2":
+      case "/signup1":
         title = "";
         metaDescription = "";
         break;
-      case "/00-signup-1":
+      case "/signup2":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/signin":
         title = "";
         metaDescription = "";
         break;
@@ -60,10 +65,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Splash />} />
-      <Route path="/00-signin" element={<Signin />} />
-      <Route path="/00-signup-2" element={<Signup2 />} />
-      <Route path="/00-signup-1" element={<Signup1 />} />
+      <Route path="/" element={<Landing />} />
+      <Route path="/01-my-ecosystem" element={<MyEcosystem />} />
+      <Route path="/signup1" element={<Signup1 />} />
+      <Route path="/signup2" element={<Signup2 />} />
+      <Route path="/signin" element={<SignIn />} />
     </Routes>
   );
 }
